@@ -7,17 +7,18 @@ public class Main {
     public static void main(String[] args) {
         Date data = new Date();
         StringBuilder log = new StringBuilder();
-        File dirSrc = new File("D:/Games", "src");
-        File dirRes = new File("D:/Games", "res");
-        File dirSaveGames = new File("D:/Games", "savegames");
-        File dirTemp = new File("D:/Games", "temp");
-        File dirMain = new File("D:/Games/src", "main");
-        File dirTest = new File("D:/Games/src", "test");
-        File dirDrawables = new File("D:/Games/res", "drawables");
-        File dirVectors = new File("D:/Games/res", "vectors");
-        File dirIcons = new File("D:/Games/res", "icons");
-        File fileMain = new File("D:/Games/src/main", "Main.java");
-        File fileUtils = new File("D:/Games/src/main", "Utils.java");
+        File dirGames = new File("D:/Games");
+        File dirSrc = new File(dirGames, "src");
+        File dirRes = new File(dirGames, "res");
+        File dirSaveGames = new File(dirGames, "savegames");
+        File dirTemp = new File(dirGames, "temp");
+        File dirMain = new File(dirSrc, "main");
+        File dirTest = new File(dirSrc, "test");
+        File dirDrawables = new File(dirRes, "drawables");
+        File dirVectors = new File(dirRes, "vectors");
+        File dirIcons = new File(dirRes, "icons");
+        File fileMain = new File(dirMain, "Main.java");
+        File fileUtils = new File(dirMain, "Utils.java");
 
         if (dirSrc.mkdir()) {
             log.append(data + "\tпапка " + dirSrc + " создана\n");
@@ -110,6 +111,7 @@ public class Main {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+
 
     }
 }
