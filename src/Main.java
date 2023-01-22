@@ -30,7 +30,7 @@ public class Main {
 
     }
 
-    public static StringBuilder makeDir(StringBuilder log, String[] folders, File dir) {
+    public static void makeDir(StringBuilder log, String[] folders, File dir) {
         Date data = new Date();
         for (String folder : folders) {
             if ((new File(dir, folder)).mkdir()) {
@@ -39,10 +39,9 @@ public class Main {
                 log.append(data + "\tпапка " + (new File(dir, folder)) + " не создана\n");
             }
         }
-        return log;
     }
 
-    public static StringBuilder makeFile(StringBuilder log, String[] files, File dir) {
+    public static void makeFile(StringBuilder log, String[] files, File dir) {
         Date data = new Date();
         for (String file : files) {
             if ((new File(dir, file)).exists()) {
@@ -61,6 +60,5 @@ public class Main {
                 System.out.println(ex.getMessage());
             }
         }
-        return log;
     }
 }
