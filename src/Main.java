@@ -16,12 +16,12 @@ public class Main {
         String[] res = new String[]{"drawables", "vectors", "icons"};
         String[] main = new String[]{"Main.java", "Utils.java"};
 
-        makeDir(log , games, dirGames);
-        makeDir(log , src, dirSrc);
-        makeDir(log , res, dirRes);
+        makeDir(log, games, dirGames);
+        makeDir(log, src, dirSrc);
+        makeDir(log, res, dirRes);
         makeFile(log, main, dirMain);
 
-        try (FileWriter fileTemp = new FileWriter("D:/Games/temp/temp.txt", true)){
+        try (FileWriter fileTemp = new FileWriter("D:/Games/temp/temp.txt", true)) {
             fileTemp.write(String.valueOf(log));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -29,6 +29,7 @@ public class Main {
 
 
     }
+
     public static StringBuilder makeDir(StringBuilder log, String[] folders, File dir) {
         Date data = new Date();
         for (String folder : folders) {
